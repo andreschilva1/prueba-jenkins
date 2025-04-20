@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Clonar repositorio') {
             steps {
-                 git branch: 'main', git credentialsId: 'github-credentials', url: 'https://github.com/andreschilva1/prueba-jenkins.git'
+                git branch: 'main', url: 'https://github.com/andreschilva1/prueba-jenkins.git', credentialsId: 'github-credentials'
             }
         }
+
         stage('Levantar contenedores') {
             steps {
                 sh 'docker-compose up -d'
