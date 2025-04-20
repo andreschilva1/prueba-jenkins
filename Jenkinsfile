@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clonar repositorio') {
             steps {
-                git credentialsId: 'github-credentials', url: 'https://github.com/andreschilva1/prueba-jenkins.git'
+                 git branch: 'main', git credentialsId: 'github-credentials', url: 'https://github.com/andreschilva1/prueba-jenkins.git'
             }
         }
         stage('Levantar contenedores') {
